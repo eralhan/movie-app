@@ -1,13 +1,9 @@
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Card from "react-bootstrap/Card";
-import Spinner from "react-bootstrap/Spinner";
-import React, { Component, Suspense } from "react";
+import React, { Component } from "react";
 import axios from "axios";
-
-const baseImgUrl = "https://image.tmdb.org/t/p";
-const size = "w500";
+import TrendingMovieCard from "./TrendingMovieCard";
 
 class TrendingMovies extends Component {
   state = {
@@ -32,27 +28,13 @@ class TrendingMovies extends Component {
             <h1>Trending</h1>
           </Col>
         </Row>
-        <Suspense fallback={<Spinner animation="border" variant="dark" />}>
-          <Row style={{ flexWrap: "nowrap", overflowX: "scroll" }}>
-            {this.state.movies.map((movie) => (
-              <Col key={movie.id}>
-                <Card style={{ width: "18rem" }}>
-                  <Card.Img
-                    variant="top"
-                    src={`${baseImgUrl}/${size}/${movie.poster_path}`}
-                  />
-                  <Card.Body>
-                    <Card.Title>{movie.title ?? movie.name}</Card.Title>
-                    <Card.Text>
-                      {movie.release_date ?? movie.first_air_date}
-                    </Card.Text>
-                    <Card.Text>{movie.vote_average}</Card.Text>
-                  </Card.Body>
-                </Card>
-              </Col>
-            ))}
-          </Row>
-        </Suspense>
+        <Row style={{ flexWrap: "nowrap", overflowX: "scroll" }}>
+          {this.state.movies.map((movie) => (
+            <Col key={movie.id}>
+              <TrendingMovieCard movie={movie} />
+            </Col>
+          ))}
+        </Row>
       </Container>
     );
   }
