@@ -1,10 +1,11 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
 import Row from "react-bootstrap/Row";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Button from "react-bootstrap/Button";
 
 const MovieDetails = () => {
   const [data, setData] = useState({});
@@ -96,8 +97,11 @@ const MovieDetails = () => {
                 </ul>
               </Col>
             </Row>
-            <Row>
+            <Row className="d-flex">
               <h2>Casts</h2>
+              <Link to={`/movie/${params.id}/fullcast`}>See Full Cast</Link>
+            </Row>
+            <Row>
               {credits.slice(0, 10).map((credit) => (
                 <Col key={credit.id}>
                   <div className="castCard">
