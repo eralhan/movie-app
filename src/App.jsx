@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Header from "./component/Header";
 import MovieDetails from "./pages/MovieDetails";
 import FullCast from "./pages/FullCast";
+import PopularMovies from "./pages/PopularMovies";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/movie/popular" element={<PopularMovies />} />
         <Route path="/movie/:id" element={<MovieDetails />} />
         <Route path="/movie/:id/fullcast" element={<FullCast />} />
       </Routes>

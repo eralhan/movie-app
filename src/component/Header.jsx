@@ -2,6 +2,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -17,7 +18,9 @@ const Header = () => {
                 title="Movies"
                 menuVariant="dark"
               >
-                <NavDropdown.Item href="#">Popular</NavDropdown.Item>
+                <NavDropdown.Item href="#">
+                  <Link to={"/movie/popular"}>Popular</Link>
+                </NavDropdown.Item>
                 <NavDropdown.Item href="#">Now Playing</NavDropdown.Item>
                 <NavDropdown.Item href="#">Upcoming</NavDropdown.Item>
                 <NavDropdown.Item href="#">Top Rated</NavDropdown.Item>
