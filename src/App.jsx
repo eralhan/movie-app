@@ -4,6 +4,7 @@ import Header from "./component/Header";
 import MovieDetails from "./pages/MovieDetails";
 import FullCast from "./pages/FullCast";
 import PopularMovies from "./pages/PopularMovies";
+import "./App.css";
 
 function App() {
   return (
