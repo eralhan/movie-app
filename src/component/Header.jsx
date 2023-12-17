@@ -26,7 +26,9 @@ const Header = () => {
                 <NavDropdown.Item href="#">
                   <Link to={"/movie/now_playing"}>Now Playing</Link>
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#">Upcoming</NavDropdown.Item>
+                <NavDropdown.Item href="#">
+                  <Link to={"/movie/upcoming"}>Upcoming</Link>
+                </NavDropdown.Item>
                 <NavDropdown.Item href="#">Top Rated</NavDropdown.Item>
               </NavDropdown>
               <NavDropdown
