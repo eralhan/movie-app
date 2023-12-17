@@ -6,6 +6,7 @@ import Row from "react-bootstrap/Row";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Button from "react-bootstrap/Button";
+import Badge from "react-bootstrap/Badge";
 
 const MovieDetails = () => {
   const [data, setData] = useState({});
@@ -81,12 +82,15 @@ const MovieDetails = () => {
               <Col sm={8}>
                 <h2>{data?.title}</h2>
                 <h5>Release Date: {releaseDate}</h5>
-                <h5>Genres:</h5>
-                <ul>
+                <h5 style={{ display: "flex", gap: "0.5rem" }}>
+                  Genres:
                   {data?.genres.map((genre) => (
-                    <li key={genre.id}>{genre.name}</li>
+                    <Badge bg="secondary" key={genre.id}>
+                      {genre.name}
+                    </Badge>
                   ))}
-                </ul>
+                </h5>
+
                 <h5>Overview</h5>
                 <p>{data.overview}</p>
                 <h5>Production Companies</h5>
