@@ -29,7 +29,9 @@ const Header = () => {
                 <NavDropdown.Item href="#">
                   <Link to={"/movie/upcoming"}>Upcoming</Link>
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#">Top Rated</NavDropdown.Item>
+                <NavDropdown.Item href="#">
+                  <Link to={"/movie/top_rated"}>Top Rated</Link>
+                </NavDropdown.Item>
               </NavDropdown>
               <NavDropdown
                 id="tv-series-nav-dropdown"

@@ -84,7 +84,7 @@ const MovieDetails = () => {
                 <h5>Release Date: {releaseDate}</h5>
                 <h5 style={{ display: "flex", gap: "0.5rem" }}>
                   Genres:
-                  {data?.genres.map((genre) => (
+                  {data?.genres?.map((genre) => (
                     <Badge bg="secondary" key={genre.id}>
                       {genre.name}
                     </Badge>

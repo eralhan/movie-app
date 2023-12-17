@@ -6,6 +6,7 @@ import FullCast from "./pages/FullCast";
 import PopularMovies from "./pages/PopularMovies";
 import NowPlayingMovies from "./pages/NowPlayingMovies";
 import UpcomingMovies from "./pages/UpcomingMovies";
+import TopRatedMovies from "./pages/TopRatedMovies";
 import "./App.css";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/movie/popular" element={<PopularMovies />} />
         <Route path="/movie/now_playing" element={<NowPlayingMovies />} />
         <Route path="/movie/upcoming" element={<UpcomingMovies />} />
+        <Route path="/movie/top_rated" element={<TopRatedMovies />} />
         <Route path="/movie/:id" element={<MovieDetails />} />
         <Route path="/movie/:id/fullcast" element={<FullCast />} />
       </Routes>
