@@ -26,13 +26,13 @@ class TrendingMovies extends Component {
 
   render() {
     return (
-      <Container style={{ overflow: "hidden" }}>
+      <Container>
         <Row>
           <Col>
             <h1>Trending</h1>
           </Col>
         </Row>
-        <Row style={{ flexWrap: "nowrap", overflowX: "scroll" }}>
+        <Row>
           {this.state.movies.map((movie) => (
             <Col key={movie.id}>
               <Link to={`/movie/${movie.id}`}>
