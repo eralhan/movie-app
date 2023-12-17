@@ -5,7 +5,7 @@ const TrendingMovieCard = ({ movie }) => {
   const size = "w500";
   const releaseDate = new Date(
     movie.release_date ?? movie.first_air_date
-  ).toLocaleDateString("en-us", {
+  ).toLocaleDateString("ru", {
     day: "numeric",
     month: "short",
     year: "numeric",
