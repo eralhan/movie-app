@@ -97,14 +97,20 @@ const MovieDetails = () => {
                 </ul>
               </Col>
             </Row>
-            <Row className="d-flex">
-              <h2>Casts</h2>
-              <Link to={`/movie/${params.id}/fullcast`}>See Full Cast</Link>
+            <Row className="d-flex justify-content-between">
+              <Col>
+                <h2>Casts</h2>
+              </Col>
+              <Col>
+                <Link to={`/movie/${params.id}/fullcast`}>
+                  <Button>See Full Cast</Button>
+                </Link>
+              </Col>
             </Row>
-            <Row>
+            <Row className="mt-2">
               {credits.slice(0, 10).map((credit) => (
                 <Col key={credit.id}>
-                  <div className="castCard">
+                  <div className="castCard text-center">
                     <img
                       style={{
                         borderRadius: "50%",
@@ -117,7 +123,7 @@ const MovieDetails = () => {
                     />
                     <div className="castCard__body">
                       <h5>{credit.name}</h5>
-                      <p>{credit.character}</p>
+                      <p>Character: {credit.character}</p>
                     </div>
                   </div>
                 </Col>
