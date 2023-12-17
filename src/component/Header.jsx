@@ -9,7 +9,9 @@ const Header = () => {
     <>
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
-          <Navbar.Brand>Movie App</Navbar.Brand>
+          <Navbar.Brand>
+            <Link to={"/"}>Movie App</Link>
+          </Navbar.Brand>
           <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">
             <Nav>
