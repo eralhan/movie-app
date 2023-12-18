@@ -1,4 +1,5 @@
 import apiConfigs from "../../config/api";
+import dateFormat from "../../utils/dateFormatter";
 import "./styles/movieCard.css";
 
 const MovieCard = ({ movie }) => {
@@ -14,7 +15,7 @@ const MovieCard = ({ movie }) => {
         <div className="movieCard__content">
           <h2 className="movieCard__title">{movie.name ?? movie.title}</h2>
           <p className="movieCard__subtitle">
-            {movie.release_date ?? movie.first_air_date}
+            {dateFormat(movie.release_date ?? movie.first_air_date)}
           </p>
         </div>
       </div>

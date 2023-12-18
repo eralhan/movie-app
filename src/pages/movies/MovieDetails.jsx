@@ -8,6 +8,7 @@ import axios from "axios";
 import Button from "react-bootstrap/Button";
 import Badge from "react-bootstrap/Badge";
 import apiConfigs from "../../config/api";
+import dateFormat from "../../utils/dateFormatter";
 
 const MovieDetails = () => {
   const [data, setData] = useState({});
@@ -15,13 +16,6 @@ const MovieDetails = () => {
   const [error, setError] = useState(null);
   const [credits, setCredits] = useState([]);
   const params = useParams();
-  const releaseDate = new Date(
-    data.release_date ?? data.first_air_date
-  ).toLocaleDateString("en-us", {
-    day: "numeric",
-    month: "short",
-    year: "numeric",
-  });
 
   useEffect(() => {
     axios
@@ -74,7 +68,10 @@ const MovieDetails = () => {
               </Col>
               <Col sm={8}>
                 <h2>{data?.title}</h2>
-                <h5>Release Date: {releaseDate}</h5>
+                <h5>
+                  Release Date:{" "}
+                  {dateFormat(data.release_date ?? data.first_air_date)}
+                </h5>
                 <h5 style={{ display: "flex", gap: "0.5rem" }}>
                   Genres:
                   {data?.genres?.map((genre) => (
