@@ -9,8 +9,8 @@ const Header = () => {
     <>
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
-          <Navbar.Brand>
-            <Link to={"/"}>Movie App</Link>
+          <Navbar.Brand as={Link} to={"/"}>
+            Movie App
           </Navbar.Brand>
           <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">
@@ -20,17 +20,17 @@ const Header = () => {
                 title="Movies"
                 menuVariant="dark"
               >
-                <NavDropdown.Item href="#">
-                  <Link to={"/movie/popular"}>Popular</Link>
+                <NavDropdown.Item as={Link} to={"/movie/popular"}>
+                  Popular
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#">
-                  <Link to={"/movie/now_playing"}>Now Playing</Link>
+                <NavDropdown.Item as={Link} to={"/movie/now_playing"}>
+                  Now Playing
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#">
-                  <Link to={"/movie/upcoming"}>Upcoming</Link>
+                <NavDropdown.Item as={Link} to={"/movie/upcoming"}>
+                  Upcoming
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#">
-                  <Link to={"/movie/top_rated"}>Top Rated</Link>
+                <NavDropdown.Item as={Link} to={"/movie/top_rated"}>
+                  Top Rated
                 </NavDropdown.Item>
               </NavDropdown>
               <NavDropdown
@@ -48,8 +48,8 @@ const Header = () => {
                 title="People"
                 menuVariant="dark"
               >
-                <NavDropdown.Item href="#">
-                  <Link to={"/people/popular"}>Popular people</Link>
+                <NavDropdown.Item as={Link} to={"/people/popular"}>
+                  Popular people
                 </NavDropdown.Item>
               </NavDropdown>
             </Nav>
