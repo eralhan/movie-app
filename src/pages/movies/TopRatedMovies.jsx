@@ -6,6 +6,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import apiConfigs from "../../config/api";
 import MovieCard from "../../component/movies/MovieCard";
+import MovieContainerHeader from "../../component/movies/MovieContainerHeader";
 
 class TopRatedMovies extends Component {
   state = {
@@ -25,11 +26,7 @@ class TopRatedMovies extends Component {
   render() {
     return (
       <Container>
-        <Row>
-          <Col>
-            <h1>Top Rated Movies</h1>
-          </Col>
-        </Row>
+        <MovieContainerHeader title={"Top Rated Movies"} />
         <Row>
           {this.state.movies.map((movie) => (
             <Col key={movie.id} xs={6} sm={4} md={3} lg={2}>
