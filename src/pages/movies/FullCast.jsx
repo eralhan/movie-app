@@ -1,7 +1,5 @@
 import { useParams } from "react-router-dom";
-import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
+import { Container, Row, Col } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import apiConfigs from "../../config/api";

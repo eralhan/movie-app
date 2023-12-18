@@ -1,14 +1,9 @@
 import { useParams, Link } from "react-router-dom";
-import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
-import Image from "react-bootstrap/Image";
-import Row from "react-bootstrap/Row";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Button from "react-bootstrap/Button";
-import Badge from "react-bootstrap/Badge";
 import apiConfigs from "../../config/api";
 import dateFormat from "../../utils/dateFormatter";
+import { Container, Row, Col, Image, Button, Badge } from "react-bootstrap";
 
 const MovieDetails = () => {
   const [data, setData] = useState({});
