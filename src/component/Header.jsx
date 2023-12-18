@@ -48,7 +48,9 @@ const Header = () => {
                 title="People"
                 menuVariant="dark"
               >
-                <NavDropdown.Item href="#">Popular people</NavDropdown.Item>
+                <NavDropdown.Item href="#">
+                  <Link to={"/people/popular"}>Popular people</Link>
+                </NavDropdown.Item>
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>

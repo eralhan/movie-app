@@ -95,7 +95,7 @@ const MovieDetails = () => {
                 <p>{data.overview}</p>
                 <h5>Production Companies</h5>
                 <ul>
-                  {data?.production_companies.map((company) => (
+                  {data?.production_companies?.map((company) => (
                     <li key={company.id}>{company.name}</li>
                   ))}
                 </ul>

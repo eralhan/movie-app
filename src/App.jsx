@@ -7,6 +7,7 @@ import PopularMovies from "./pages/PopularMovies";
 import NowPlayingMovies from "./pages/NowPlayingMovies";
 import UpcomingMovies from "./pages/UpcomingMovies";
 import TopRatedMovies from "./pages/TopRatedMovies";
+import PopularPeople from "./pages/PopularPeople";
 import "./App.css";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/movie/top_rated" element={<TopRatedMovies />} />
         <Route path="/movie/:id" element={<MovieDetails />} />
         <Route path="/movie/:id/fullcast" element={<FullCast />} />
+        <Route path="/people/popular" element={<PopularPeople />} />
       </Routes>
     </>
   );
