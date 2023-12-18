@@ -2,8 +2,8 @@ import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import apiConfigs from "../../config/api";
-import dateFormat from "../../utils/dateFormatter";
-import { Container, Row, Col, Image, Button, Badge } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
+import MovieDetailsPrimary from "../../component/movies/MovieDetailsPrimary";
 
 const MovieDetails = () => {
   const [data, setData] = useState({});
@@ -46,46 +46,14 @@ const MovieDetails = () => {
 
   return (
     <>
-      <Container style={{ marginTop: "12px" }}>
+      <Container className="my-3">
         {isLoading && <p>Loading...</p>}
 
         {error && <p style={{ color: "red" }}>{error}</p>}
 
         {!isLoading && !error && (
           <>
-            <Row>
-              <Col sm={4}>
-                <Image
-                  style={{ width: "100%" }}
-                  src={`${apiConfigs.baseImgUrl}/${data.poster_path}`}
-                  alt={data.title}
-                />
-              </Col>
-              <Col sm={8}>
-                <h2>{data?.title}</h2>
-                <h5>
-                  Release Date:{" "}
-                  {dateFormat(data.release_date ?? data.first_air_date)}
-                </h5>
-                <h5 style={{ display: "flex", gap: "0.5rem" }}>
-                  Genres:
-                  {data?.genres?.map((genre) => (
-                    <Badge bg="secondary" key={genre.id}>
-                      {genre.name}
-                    </Badge>
-                  ))}
-                </h5>
-
-                <h5>Overview</h5>
-                <p>{data.overview}</p>
-                <h5>Production Companies</h5>
-                <ul>
-                  {data?.production_companies?.map((company) => (
-                    <li key={company.id}>{company.name}</li>
-                  ))}
-                </ul>
-              </Col>
-            </Row>
+            <MovieDetailsPrimary movie={data} />
             <Row className="d-flex justify-content-between">
               <Col>
                 <h2>Casts</h2>
