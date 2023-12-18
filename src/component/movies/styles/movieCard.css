@@ -1,0 +1,28 @@
+.movieCard,
+.movieCard__image img {
+  border-radius: 1.125rem;
+}
+
+.movieCard__image img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.movieCard__content {
+  padding: 0.5rem;
+}
+
+.movieCard__title,
+.movieCard__subtitle {
+  margin: 0;
+  padding: 0;
+}
+
+.movieCard__title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.movieCard__subtitle {
+  color: rgba(0, 0, 0, 0.6);
+}
