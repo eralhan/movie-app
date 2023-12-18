@@ -1,0 +1,18 @@
+.castCard {
+  border: 1px solid #d0d5dd;
+  padding: 0.5rem;
+  border-radius: 1.125rem;
+}
+
+.casts-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.castImage {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
