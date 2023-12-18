@@ -68,7 +68,7 @@ const MovieDetails = () => {
               <Col sm={4}>
                 <Image
                   style={{ width: "100%" }}
-                  src={`${apiConfigs.baseImgUrl}/${apiConfigs.imgSize}/${data.poster_path}`}
+                  src={`${apiConfigs.baseImgUrl}/${data.poster_path}`}
                   alt={data.title}
                 />
               </Col>
@@ -115,7 +115,7 @@ const MovieDetails = () => {
                         height: "150px",
                         objectFit: "cover",
                       }}
-                      src={`${apiConfigs.baseImgUrl}/${apiConfigs.imgSize}/${credit.profile_path}`}
+                      src={`${apiConfigs.baseImgUrl}/${credit.profile_path}`}
                       alt={credit.name}
                     />
                     <div className="castCard__body">

@@ -7,7 +7,7 @@ const MovieCard = ({ movie }) => {
       <div className="movieCard">
         <div className="movieCard__image">
           <img
-            src={`${apiConfigs.baseImgUrl}/${apiConfigs.imgSize}/${movie.poster_path}`}
+            src={`${apiConfigs.baseImgUrl}/${movie.poster_path}`}
             alt={movie.name ?? movie.title}
           />
         </div>

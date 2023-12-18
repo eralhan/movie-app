@@ -53,7 +53,7 @@ const FullCast = () => {
                         height: "150px",
                         objectFit: "cover",
                       }}
-                      src={`${apiConfigs.baseImgUrl}/${apiConfigs.imgSize}/${cast.profile_path}`}
+                      src={`${apiConfigs.baseImgUrl}/${cast.profile_path}`}
                       alt={cast.name}
                     />
                     <div className="castCard__body">
@@ -78,7 +78,7 @@ const FullCast = () => {
                         height: "150px",
                         objectFit: "cover",
                       }}
-                      src={`${apiConfigs.baseImgUrl}/${apiConfigs.imgSize}/${crew.profile_path}`}
+                      src={`${apiConfigs.baseImgUrl}/${crew.profile_path}`}
                       alt={crew.name}
                     />
                     <div className="crewCard__body">
