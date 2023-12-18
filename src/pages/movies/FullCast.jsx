@@ -1,8 +1,10 @@
 import { useParams } from "react-router-dom";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import apiConfigs from "../../config/api";
+import MovieCasts from "../../component/movies/MovieCasts";
+import MovieCrew from "../../component/movies/MovieCrew";
 
 const FullCast = () => {
   const [casts, setCast] = useState([]);
@@ -37,56 +39,8 @@ const FullCast = () => {
 
         {!isLoading && !error && (
           <>
-            <Row>
-              <h2>Casts</h2>
-            </Row>
-            <Row>
-              {casts.map((cast) => (
-                <Col key={cast.credit_id}>
-                  <div className="castCard">
-                    <img
-                      style={{
-                        borderRadius: "50%",
-                        width: "150px",
-                        height: "150px",
-                        objectFit: "cover",
-                      }}
-                      src={`${apiConfigs.baseImgUrl}/${cast.profile_path}`}
-                      alt={cast.name}
-                    />
-                    <div className="castCard__body">
-                      <h5>{cast.name}</h5>
-                      <p>{cast.character}</p>
-                    </div>
-                  </div>
-                </Col>
-              ))}
-            </Row>
-            <Row>
-              <h2>Crew</h2>
-            </Row>
-            <Row>
-              {crews.map((crew) => (
-                <Col key={crew.credit_id}>
-                  <div className="crewCard">
-                    <img
-                      style={{
-                        borderRadius: "50%",
-                        width: "150px",
-                        height: "150px",
-                        objectFit: "cover",
-                      }}
-                      src={`${apiConfigs.baseImgUrl}/${crew.profile_path}`}
-                      alt={crew.name}
-                    />
-                    <div className="crewCard__body">
-                      <h5>{crew.name}</h5>
-                      <p>{crew.department}</p>
-                    </div>
-                  </div>
-                </Col>
-              ))}
-            </Row>
+            <MovieCasts casts={casts} />
+            <MovieCrew crew={crews} />
           </>
         )}
       </Container>

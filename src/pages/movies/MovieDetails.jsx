@@ -1,8 +1,8 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import apiConfigs from "../../config/api";
-import { Container } from "react-bootstrap";
+import { Container, Button } from "react-bootstrap";
 import MovieDetailsPrimary from "../../component/movies/MovieDetailsPrimary";
 import MovieCasts from "../../component/movies/MovieCasts";
 
@@ -55,7 +55,12 @@ const MovieDetails = () => {
         {!isLoading && !error && (
           <>
             <MovieDetailsPrimary movie={data} />
-            <MovieCasts casts={credits} movieId={params.id} />
+            <div style={{ display: "flex", justifyContent: "end" }}>
+              <Link to={`/movie/${params.id}/fullcast`}>
+                <Button>See Full Cast</Button>
+              </Link>
+            </div>
+            <MovieCasts casts={credits.slice(0, 10)} />
           </>
         )}
       </Container>
