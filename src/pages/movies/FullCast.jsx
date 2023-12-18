@@ -4,7 +4,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import apiConfigs from "../config/api";
+import apiConfigs from "../../config/api";
 
 const FullCast = () => {
   const [casts, setCast] = useState([]);

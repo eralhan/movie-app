@@ -1,13 +1,13 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Header from "./component/Header";
-import MovieDetails from "./pages/MovieDetails";
-import FullCast from "./pages/FullCast";
-import PopularMovies from "./pages/PopularMovies";
-import NowPlayingMovies from "./pages/NowPlayingMovies";
-import UpcomingMovies from "./pages/UpcomingMovies";
-import TopRatedMovies from "./pages/TopRatedMovies";
-import PopularPeople from "./pages/PopularPeople";
+import MovieDetails from "./pages/movies/MovieDetails";
+import FullCast from "./pages/movies/FullCast";
+import PopularMovies from "./pages/movies/PopularMovies";
+import NowPlayingMovies from "./pages/movies/NowPlayingMovies";
+import UpcomingMovies from "./pages/movies/UpcomingMovies";
+import TopRatedMovies from "./pages/movies/TopRatedMovies";
+import PopularPeople from "./pages/people/PopularPeople";
 import "./App.css";
 
 function App() {

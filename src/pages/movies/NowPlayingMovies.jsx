@@ -3,18 +3,18 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import React, { Component } from "react";
 import axios from "axios";
-import TrendingMovieCard from "../component/movies/TrendingMovieCard";
+import TrendingMovieCard from "../../component/movies/TrendingMovieCard";
 import { Link } from "react-router-dom";
-import apiConfigs from "../config/api";
+import apiConfigs from "../../config/api";
 
-class PopularMovies extends Component {
+class NowPlayingMovies extends Component {
   state = {
     movies: [],
   };
 
   async componentDidMount() {
     await axios
-      .get(`${apiConfigs.baseUrl}/movie/popular?language=en-US&page=1`, {
+      .get(`${apiConfigs.baseUrl}/movie/now_playing?language=en-US&page=1`, {
         headers: apiConfigs.headers,
       })
       .then((response) => {
@@ -27,7 +27,7 @@ class PopularMovies extends Component {
       <Container>
         <Row>
           <Col>
-            <h1>Popular Movies</h1>
+            <h1>Now Playing Movies</h1>
           </Col>
         </Row>
         <Row>
@@ -44,4 +44,4 @@ class PopularMovies extends Component {
   }
 }
 
-export default PopularMovies;
+export default NowPlayingMovies;

@@ -4,7 +4,7 @@ import Col from "react-bootstrap/Col";
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import apiConfigs from "../config/api";
+import apiConfigs from "../../config/api";
 
 class PopularPeople extends Component {
   state = {

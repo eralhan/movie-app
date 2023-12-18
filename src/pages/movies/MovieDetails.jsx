@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Button from "react-bootstrap/Button";
 import Badge from "react-bootstrap/Badge";
-import apiConfigs from "../config/api";
+import apiConfigs from "../../config/api";
 
 const MovieDetails = () => {
   const [data, setData] = useState({});

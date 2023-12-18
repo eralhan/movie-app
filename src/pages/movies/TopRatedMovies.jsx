@@ -3,9 +3,9 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import React, { Component } from "react";
 import axios from "axios";
-import TrendingMovieCard from "../component/movies/TrendingMovieCard";
+import TrendingMovieCard from "../../component/movies/TrendingMovieCard";
 import { Link } from "react-router-dom";
-import apiConfigs from "../config/api";
+import apiConfigs from "../../config/api";
 
 class TopRatedMovies extends Component {
   state = {
