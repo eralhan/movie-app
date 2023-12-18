@@ -5,6 +5,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import TrendingMovieCard from "./TrendingMovieCard";
 import { Link } from "react-router-dom";
+import apiConfigs from "./../../config/api";
 
 class TrendingMovies extends Component {
   state = {
@@ -13,11 +14,8 @@ class TrendingMovies extends Component {
 
   async componentDidMount() {
     await axios
-      .get("https://api.themoviedb.org/3/trending/all/day", {
-        headers: {
-          accept: "application/json",
-          Authorization: `Bearer ${process.env.REACT_APP_API_TOKEN}`,
-        },
+      .get(`${apiConfigs.baseUrl}/trending/all/day`, {
+        headers: apiConfigs.headers,
       })
       .then((response) => {
         this.setState({ movies: response.data.results });

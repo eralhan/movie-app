@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Button from "react-bootstrap/Button";
 import Badge from "react-bootstrap/Badge";
+import apiConfigs from "../config/api";
 
 const MovieDetails = () => {
   const [data, setData] = useState({});
@@ -14,8 +15,6 @@ const MovieDetails = () => {
   const [error, setError] = useState(null);
   const [credits, setCredits] = useState([]);
   const params = useParams();
-  const baseImgUrl = "https://image.tmdb.org/t/p";
-  const size = "w500";
   const releaseDate = new Date(
     data.release_date ?? data.first_air_date
   ).toLocaleDateString("en-us", {
@@ -26,11 +25,8 @@ const MovieDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`https://api.themoviedb.org/3/movie/${params.id}`, {
-        headers: {
-          accept: "application/json",
-          Authorization: `Bearer ${process.env.REACT_APP_API_TOKEN}`,
-        },
+      .get(`${apiConfigs.baseUrl}/movie/${params.id}`, {
+        headers: apiConfigs.headers,
       })
       .then((response) => {
         setData(response.data);
@@ -45,11 +41,8 @@ const MovieDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`https://api.themoviedb.org/3/movie/${params.id}/credits`, {
-        headers: {
-          accept: "application/json",
-          Authorization: `Bearer ${process.env.REACT_APP_API_TOKEN}`,
-        },
+      .get(`${apiConfigs.baseUrl}/movie/${params.id}/credits`, {
+        headers: apiConfigs.headers,
       })
       .then((response) => {
         setCredits(response.data.cast);
@@ -75,7 +68,7 @@ const MovieDetails = () => {
               <Col sm={4}>
                 <Image
                   style={{ width: "100%" }}
-                  src={`${baseImgUrl}/${size}/${data.poster_path}`}
+                  src={`${apiConfigs.baseImgUrl}/${apiConfigs.imgSize}/${data.poster_path}`}
                   alt={data.title}
                 />
               </Col>
@@ -122,7 +115,7 @@ const MovieDetails = () => {
                         height: "150px",
                         objectFit: "cover",
                       }}
-                      src={`${baseImgUrl}/${size}/${credit.profile_path}`}
+                      src={`${apiConfigs.baseImgUrl}/${apiConfigs.imgSize}/${credit.profile_path}`}
                       alt={credit.name}
                     />
                     <div className="castCard__body">

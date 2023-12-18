@@ -1,8 +1,7 @@
 import "./styles/trendingMovieCard.css";
+import apiConfigs from "../../config/api";
 
 const TrendingMovieCard = ({ movie }) => {
-  const baseImgUrl = "https://image.tmdb.org/t/p";
-  const size = "w500";
   const releaseDate = new Date(
     movie.release_date ?? movie.first_air_date
   ).toLocaleDateString("ru", {
@@ -16,7 +15,7 @@ const TrendingMovieCard = ({ movie }) => {
       <div className="trendingMovieCard">
         <div className="trendingMovieCard__image">
           <img
-            src={`${baseImgUrl}/${size}/${movie.poster_path}`}
+            src={`${apiConfigs.baseImgUrl}/${apiConfigs.imgSize}/${movie.poster_path}`}
             alt={movie.name ?? movie.title}
           />
         </div>

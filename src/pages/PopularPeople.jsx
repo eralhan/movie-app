@@ -4,9 +4,7 @@ import Col from "react-bootstrap/Col";
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-
-const baseImgUrl = "https://image.tmdb.org/t/p";
-const size = "w500";
+import apiConfigs from "../config/api";
 
 class PopularPeople extends Component {
   state = {
@@ -15,15 +13,9 @@ class PopularPeople extends Component {
 
   async componentDidMount() {
     await axios
-      .get(
-        "https://api.themoviedb.org/3/person/popular?language=en-US&page=1",
-        {
-          headers: {
-            accept: "application/json",
-            Authorization: `Bearer ${process.env.REACT_APP_API_TOKEN}`,
-          },
-        }
-      )
+      .get(`${apiConfigs.baseUrl}/person/popular?language=en-US&page=1`, {
+        headers: apiConfigs.headers,
+      })
       .then((response) => {
         this.setState({ people: response.data.results });
       });
@@ -45,7 +37,7 @@ class PopularPeople extends Component {
               >
                 <img
                   style={{ width: "100%", borderRadius: "12px" }}
-                  src={`${baseImgUrl}/${size}/${person.profile_path}`}
+                  src={`${apiConfigs.baseImgUrl}/${apiConfigs.imgSize}/${person.profile_path}`}
                   alt={person.name}
                 />
                 <div style={{ padding: "8px" }}>

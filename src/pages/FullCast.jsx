@@ -4,6 +4,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import apiConfigs from "../config/api";
 
 const FullCast = () => {
   const [casts, setCast] = useState([]);
@@ -11,16 +12,11 @@ const FullCast = () => {
   const [isLoading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const params = useParams();
-  const baseImgUrl = "https://image.tmdb.org/t/p";
-  const size = "w500";
 
   useEffect(() => {
     axios
-      .get(`https://api.themoviedb.org/3/movie/${params.id}/credits`, {
-        headers: {
-          accept: "application/json",
-          Authorization: `Bearer ${process.env.REACT_APP_API_TOKEN}`,
-        },
+      .get(`${apiConfigs.baseUrl}/movie/${params.id}/credits`, {
+        headers: apiConfigs.headers,
       })
       .then((response) => {
         setCast(response.data.cast);
@@ -57,7 +53,7 @@ const FullCast = () => {
                         height: "150px",
                         objectFit: "cover",
                       }}
-                      src={`${baseImgUrl}/${size}/${cast.profile_path}`}
+                      src={`${apiConfigs.baseImgUrl}/${apiConfigs.imgSize}/${cast.profile_path}`}
                       alt={cast.name}
                     />
                     <div className="castCard__body">
@@ -82,7 +78,7 @@ const FullCast = () => {
                         height: "150px",
                         objectFit: "cover",
                       }}
-                      src={`${baseImgUrl}/${size}/${crew.profile_path}`}
+                      src={`${apiConfigs.baseImgUrl}/${apiConfigs.imgSize}/${crew.profile_path}`}
                       alt={crew.name}
                     />
                     <div className="crewCard__body">
