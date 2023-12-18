@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <>
-      <Navbar bg="dark" data-bs-theme="dark">
+      <Navbar bg="black" data-bs-theme="dark">
         <Container>
           <Navbar.Brand as={Link} to={"/"}>
             Movie App

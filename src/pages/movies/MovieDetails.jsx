@@ -2,7 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import apiConfigs from "../../config/api";
-import { Container, Button } from "react-bootstrap";
+import { Container, Button, Alert } from "react-bootstrap";
 import MovieDetailsPrimary from "../../component/movies/MovieDetailsPrimary";
 import MovieCasts from "../../component/movies/MovieCasts";
 
@@ -22,8 +22,7 @@ const MovieDetails = () => {
         setData(response.data);
         setLoading(false);
       })
-      .catch((error) => {
-        console.error(error);
+      .catch(() => {
         setLoading(false);
         setError("An error occurred while fetching the data. Try Later.");
       });
@@ -38,8 +37,7 @@ const MovieDetails = () => {
         setCredits(response.data.cast);
         setLoading(false);
       })
-      .catch((error) => {
-        console.error(error);
+      .catch(() => {
         setLoading(false);
         setError("An error occurred while fetching the data. Try Later.");
       });
@@ -50,7 +48,11 @@ const MovieDetails = () => {
       <Container className="my-3">
         {isLoading && <p>Loading...</p>}
 
-        {error && <p style={{ color: "red" }}>{error}</p>}
+        {error && (
+          <Alert variant="danger" className="text-center">
+            {error}
+          </Alert>
+        )}
 
         {!isLoading && !error && (
           <>
