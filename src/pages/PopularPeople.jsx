@@ -52,11 +52,15 @@ class PopularPeople extends Component {
                   <h5 className="text-center">{person.name}</h5>
                   <h6>Known For:</h6>
                   <ul>
-                    {person?.known_for?.map((known) => (
-                      <Link to={`/movie/${known.id}`}>
+                    {person?.known_for?.map((known) =>
+                      known.media_type === "movie" ? (
+                        <Link to={`/movie/${known.id}`}>
+                          <li key={known.id}>{known.title ?? known.name}</li>
+                        </Link>
+                      ) : (
                         <li key={known.id}>{known.title ?? known.name}</li>
-                      </Link>
-                    ))}
+                      )
+                    )}
                   </ul>
                 </div>
               </div>
