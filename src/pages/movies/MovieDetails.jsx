@@ -5,6 +5,7 @@ import apiConfigs from "../../config/api";
 import { Container, Button, Alert } from "react-bootstrap";
 import MovieDetailsPrimary from "../../component/movies/MovieDetailsPrimary";
 import MovieCasts from "../../component/movies/MovieCasts";
+import Loader from "../../component/Loader";
 
 const MovieDetails = () => {
   const [data, setData] = useState({});
@@ -46,10 +47,10 @@ const MovieDetails = () => {
   return (
     <>
       <Container className="my-3">
-        {isLoading && <p>Loading...</p>}
+        {isLoading && <Loader />}
 
         {error && (
-          <Alert variant="danger" className="text-center">
+          <Alert variant="danger" className="d-inline-flex text-center">
             {error}
           </Alert>
         )}
