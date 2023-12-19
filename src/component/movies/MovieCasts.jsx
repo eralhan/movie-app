@@ -6,7 +6,7 @@ const MovieCasts = ({ casts }) => {
   return (
     <>
       <div className="casts-header my-4">
-        <h2>Casts</h2>
+        <h2 className="text-white">Casts</h2>
       </div>
       <Row className="mt-2 g-2">
         {casts.map((cast) => (
@@ -25,7 +25,7 @@ const MovieCasts = ({ casts }) => {
                   alt={cast.name}
                 />
               )}
-              <div className="castCard__body">
+              <div className="castCard__body text-white">
                 <h5>{cast.name}</h5>
                 {cast?.character && (
                   <p>

@@ -24,7 +24,7 @@ class PopularPeople extends Component {
       <Container className="my-4">
         <Row>
           <Col>
-            <h1>Popular People</h1>
+            <h1 className="text-white">Popular People</h1>
           </Col>
         </Row>
         <Row className="g-4">
@@ -47,8 +47,8 @@ class PopularPeople extends Component {
                   />
                 )}
                 <div style={{ padding: "8px" }}>
-                  <h5 className="text-center">{person.name}</h5>
-                  <h6>Known For:</h6>
+                  <h5 className="text-center text-white">{person.name}</h5>
+                  <h6 className="text-white">Known For:</h6>
                   <ul>
                     {person?.known_for?.map((known) =>
                       known.media_type === "movie" ? (

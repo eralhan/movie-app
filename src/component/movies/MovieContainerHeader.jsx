@@ -5,7 +5,7 @@ const MovieContainerHeader = ({ title }) => {
     <>
       <Row className="my-2">
         <Col>
-          <h1>{title}</h1>
+          <h1 className="text-white">{title}</h1>
         </Col>
       </Row>
     </>

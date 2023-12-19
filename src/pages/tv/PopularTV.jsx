@@ -32,7 +32,7 @@ class PopularTV extends Component {
             <>
               <Row className="my-2">
                 <Col>
-                  <h1>Popular Tv Shows</h1>
+                  <h1 className="text-white">Popular Tv Shows</h1>
                 </Col>
               </Row>
               <Row>

@@ -21,10 +21,11 @@
 .tvCard__title {
   font-size: 1.1rem;
   font-weight: 600;
+  color: white;
 }
 
 .tvCard__subtitle {
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .tvCard__overview {
@@ -33,4 +34,5 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  color: rgba(255, 255, 255, 0.8);
 }

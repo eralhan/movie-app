@@ -23,19 +23,21 @@ const MovieDetailsPrimary = ({ movie }) => {
           )}
         </Col>
         <Col xs={12} sm={8}>
-          <h2>
+          <h2 className="text-white">
             {movie?.title}
             <Badge bg="warning" className="mx-2">
               {movie?.vote_average?.toFixed(1)}
             </Badge>
           </h2>
 
-          <h5>
+          <h5 className="text-white">
             Release Date:{" "}
             {dateFormat(movie.release_date ?? movie.first_air_date)}
           </h5>
 
-          <h5 style={{ marginBottom: "2px" }}>Genres</h5>
+          <h5 style={{ marginBottom: "2px" }} className="text-white">
+            Genres
+          </h5>
           <div className="movie-genres">
             {movie?.genres?.map((genre) => (
               <Badge bg="secondary" key={genre.id}>
@@ -46,10 +48,10 @@ const MovieDetailsPrimary = ({ movie }) => {
 
           {movie?.tagline && <h5 className="movie-tagline">{movie.tagline}</h5>}
 
-          <h5>Overview</h5>
+          <h5 className="text-white">Overview</h5>
           <p className="body-text">{movie?.overview}</p>
 
-          <h5>Production Companies</h5>
+          <h5 className="text-white">Production Companies</h5>
           <div className="movie-production-companies">
             {movie?.production_companies?.map((company) => (
               <div key={company.id}>

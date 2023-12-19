@@ -6,7 +6,7 @@ const MovieCrew = ({ crew }) => {
   return (
     <>
       <div className="crews-header my-4">
-        <h2>Crew</h2>
+        <h2 className="text-white">Crew</h2>
       </div>
       <Row className="mt-2 g-2">
         {crew.map((crew) => (
@@ -25,7 +25,7 @@ const MovieCrew = ({ crew }) => {
                   alt={crew.name}
                 />
               )}
-              <div className="crewCard__body">
+              <div className="crewCard__body text-white">
                 <h5>{crew.name}</h5>
                 {crew?.known_for_department && (
                   <p>
