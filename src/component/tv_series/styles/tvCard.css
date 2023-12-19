@@ -1,0 +1,36 @@
+.tvCard,
+.tvCard__image img {
+  border-radius: 1.125rem;
+}
+
+.tvCard__image img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.tvCard__content {
+  padding: 0.5rem;
+}
+
+.tvCard__title,
+.tvCard__subtitle {
+  margin: 0;
+  padding: 0;
+}
+
+.tvCard__title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.tvCard__subtitle {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.tvCard__overview {
+  display: -webkit-box;
+  max-width: 100%;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

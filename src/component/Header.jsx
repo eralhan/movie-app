@@ -38,9 +38,9 @@ const Header = () => {
                 title="TV Series"
                 menuVariant="dark"
               >
-                <NavDropdown.Item href="#">Popular</NavDropdown.Item>
-                <NavDropdown.Item href="#">Airing Today</NavDropdown.Item>
-                <NavDropdown.Item href="#">On The Air</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to={"/tv/popular"}>
+                  Popular
+                </NavDropdown.Item>
                 <NavDropdown.Item href="#">Top Rated</NavDropdown.Item>
               </NavDropdown>
               <NavDropdown
